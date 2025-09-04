@@ -1,0 +1,12 @@
+bin/
+dist/
+*.bak
+*.bak.*
+*.tmp
+.DS_Store
+*.pem
+*.key
+**/reflex.lock
+**/.idea/
+**/.vscode/
+
