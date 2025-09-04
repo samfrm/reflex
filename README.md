@@ -28,18 +28,21 @@ Perfect for attribution tests, analytics pipelines, and E2E growth flows.
 
 ### 🚀 Quick Start
 
-1) One‑time (Linux only) — share CA between root and your user
+1) One‑time — install mkcert local CA (all platforms)
+
+• macOS: `brew install mkcert nss && sudo mkcert -install`
+
+• Windows: `choco install mkcert` then `mkcert -install` (admin PowerShell)
+
+• Linux (also share CA between root and your user so sudo uses the same CA):
 
 ```bash
-sudo mkcert -install     # system trust store
-mkcert -install          # your user’s Firefox/Chromium trust
+sudo mkcert -install     # install to system trust store
+mkcert -install          # install to your user’s Firefox/Chromium trust
 sudo mkdir -p /etc/mkcert
 sudo cp -a "$(mkcert -CAROOT)/." /etc/mkcert/
 sudo chmod 755 /etc/mkcert && sudo chmod 644 /etc/mkcert/*
 ```
-
-• macOS: `brew install mkcert nss && sudo mkcert -install`
-• Windows: `choco install mkcert` then `mkcert -install` (admin PowerShell)
 
 2) Run a referrer → target flow
 
