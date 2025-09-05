@@ -1,3 +1,4 @@
+version: 2
 project_name: reflex
 
 builds:
@@ -18,12 +19,7 @@ builds:
 
 archives:
   - id: archive
-    builds:
-      - reflex
     name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
-    format_overrides:
-      - goos: windows
-        format: zip
     files:
       - README.md
 

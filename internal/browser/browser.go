@@ -2,15 +2,11 @@ package browser
 
 import (
     "errors"
-    "fmt"
     "os"
     "os/exec"
-    "os/user"
     "path/filepath"
     "runtime"
-    "strconv"
     "strings"
-    "syscall"
 )
 
 // Open attempts to open the url in a browser cross-platform.
@@ -94,40 +90,7 @@ func appExists(path string) bool {
 // dropToSudoUser modifies cmd to run as the SUDO_USER if the current process
 // is running with uid 0. It also adjusts common environment variables so the
 // desktop session (DBus/XDG) can be discovered.
-func dropToSudoUser(cmd *exec.Cmd) {
-    if runtime.GOOS == "windows" {
-        return
-    }
-    if os.Geteuid() != 0 {
-        return
-    }
-    sudoUser := os.Getenv("SUDO_USER")
-    if sudoUser == "" {
-        return
-    }
-    u, err := user.Lookup(sudoUser)
-    if err != nil {
-        return
-    }
-    uid, _ := strconv.Atoi(u.Uid)
-    gid, _ := strconv.Atoi(u.Gid)
-    cmd.SysProcAttr = &syscall.SysProcAttr{Credential: &syscall.Credential{Uid: uint32(uid), Gid: uint32(gid)}}
-
-    env := os.Environ()
-    env = setEnv(env, "HOME", u.HomeDir)
-    env = setEnv(env, "USER", sudoUser)
-    env = setEnv(env, "LOGNAME", sudoUser)
-    if runtime.GOOS == "linux" {
-        xdg := fmt.Sprintf("/run/user/%d", uid)
-        if st, err := os.Stat(xdg); err == nil && st.IsDir() {
-            env = setEnv(env, "XDG_RUNTIME_DIR", xdg)
-            if !hasEnv(env, "DBUS_SESSION_BUS_ADDRESS") {
-                env = append(env, "DBUS_SESSION_BUS_ADDRESS=unix:path="+filepath.Join(xdg, "bus"))
-            }
-        }
-    }
-    cmd.Env = env
-}
+// dropToSudoUser is implemented per-OS in drop_*.go.
 
 func setEnv(env []string, key, value string) []string {
     prefix := key + "="
@@ -149,4 +112,3 @@ func hasEnv(env []string, key string) bool {
     }
     return false
 }
-
