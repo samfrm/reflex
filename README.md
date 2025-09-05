@@ -1,5 +1,8 @@
 ## reflex — Local HTTPS referrer emulator ⚡️
 
+[![Release](https://img.shields.io/github/v/release/samfrm/reflex?sort=semver)](https://github.com/samfrm/reflex/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/samfrm/reflex/total.svg)](https://github.com/samfrm/reflex/releases)
+
 Emulate real inbound referrers in modern browsers — safely and repeatably.
 
 ✨ What it does
@@ -53,6 +56,22 @@ sudo reflex run \
 ```
 
 Reflex opens your default browser (as your normal user) in a private window and serves a small referrer page using HTTPS with a trusted local cert.
+
+### 📦 Install / Download
+
+- Download: https://github.com/samfrm/reflex/releases/latest
+- One‑liner (Linux/macOS):
+
+```bash
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')
+ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+curl -L "https://github.com/samfrm/reflex/releases/latest/download/reflex_${OS}_${ARCH}.tar.gz" -o reflex.tgz
+tar xzf reflex.tgz && rm reflex.tgz
+sudo mv reflex /usr/local/bin/
+reflex --version
+```
+
+- Windows: Download the latest `reflex_windows_<arch>.tar.gz` from Releases and place `reflex.exe` on your PATH.
 
 ### 🔧 Install / Build
 
