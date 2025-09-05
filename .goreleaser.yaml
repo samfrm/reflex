@@ -1,0 +1,40 @@
+project_name: reflex
+
+builds:
+  - id: reflex
+    main: ./cmd/reflex
+    binary: reflex
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+      - windows
+    goarch:
+      - amd64
+      - arm64
+    ldflags:
+      - -s -w
+
+archives:
+  - id: archive
+    builds:
+      - reflex
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}"
+    format_overrides:
+      - goos: windows
+        format: zip
+    files:
+      - README.md
+
+checksum:
+  name_template: "checksums.txt"
+
+release:
+  # goreleaser uses the repo from the checked out git remote; GITHUB_TOKEN handles auth
+  draft: false
+  prerelease: auto
+
+changelog:
+  use: github
+  sort: asc
