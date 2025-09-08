@@ -2,6 +2,7 @@
 
 [![Release](https://img.shields.io/github/v/release/samfrm/reflex?sort=semver)](https://github.com/samfrm/reflex/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/samfrm/reflex/total.svg)](https://github.com/samfrm/reflex/releases)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17079395.svg)](https://doi.org/10.5281/zenodo.17079395)
 
 Emulate real inbound referrers in modern browsers — safely and repeatably.
 
@@ -60,6 +61,12 @@ Reflex opens your default browser (as your normal user) in a private window and 
 ### 📦 Install / Download
 
 - Download: https://github.com/samfrm/reflex/releases/latest
+- Go install (Go 1.21+):
+
+```
+go install github.com/samfrm/reflex/cmd/reflex@latest
+```
+
 - One‑liner (Linux/macOS):
 
 ```bash

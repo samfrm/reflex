@@ -27,7 +27,7 @@ const (
 )
 
 func main() {
-	log.SetFlags(0)
+    log.SetFlags(0)
 
 	if len(os.Args) < 2 {
 		usageAndExit(2)
@@ -65,13 +65,15 @@ func main() {
 		}
 	case "help", "-h", "--help":
 		usageAndExit(0)
-	case "version", "-v", "--version":
-		fmt.Println("reflex v0.1.0")
-	default:
-		fmt.Fprintf(os.Stderr, "unknown command: %s\n", cmd)
-		usageAndExit(2)
-	}
+    case "version", "-v", "--version":
+        fmt.Printf("reflex %s\n", version)
+    default:
+        fmt.Fprintf(os.Stderr, "unknown command: %s\n", cmd)
+        usageAndExit(2)
+    }
 }
+
+var version = "dev"
 
 func usageAndExit(code int) {
 	fmt.Fprintf(os.Stderr, `
