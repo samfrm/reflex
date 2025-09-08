@@ -9,4 +9,4 @@ dist/
 **/reflex.lock
 **/.idea/
 **/.vscode/
-
+.gocache/

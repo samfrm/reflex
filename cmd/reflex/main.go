@@ -13,11 +13,11 @@ import (
 	"syscall"
 	"time"
 
-	"reflex/internal/browser"
-	"reflex/internal/certs"
-	"reflex/internal/hosts"
-	"reflex/internal/server"
-	"reflex/internal/util"
+	"github.com/samfrm/reflex/internal/browser"
+	"github.com/samfrm/reflex/internal/certs"
+	"github.com/samfrm/reflex/internal/hosts"
+	"github.com/samfrm/reflex/internal/server"
+	"github.com/samfrm/reflex/internal/util"
 )
 
 const (
