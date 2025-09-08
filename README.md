@@ -145,6 +145,14 @@ Code map:
 
 🧪 Tests: `go test ./...` (unit tests generate self‑signed certs; no mkcert required)
 
+### 📚 Citation
+
+If you use Reflex in your work, please cite the archived release:
+
+- Sam (Abbas) Farahmand Pashaki. Reflex — Local HTTPS referrer emulation for reproducible web analytics and experimentation. Zenodo. https://doi.org/10.5281/zenodo.17079395
+
+See also the citation metadata in `CITATION.cff`.
+
 ### 🗺️ Roadmap
 
 - 🧭 Optional DNS spoofing mode (no hosts edits)
