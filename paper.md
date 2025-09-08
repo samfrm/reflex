@@ -58,7 +58,7 @@ The repository includes unit tests for the HTTPS redirector (verifying method‑
 
 # State of the field
 
-Developers commonly rely on ad‑hoc local servers, browser extensions, or general‑purpose proxies to test web behavior. While these tools are powerful, they do not specifically target reproducible referrer emulation with standards‑compliant HTTPS and `Referrer-Policy` control. Reflex fills this narrow but frequently encountered gap with a single‑purpose, scriptable CLI tailored to referrer‑dependent analytics and experimentation.
+Developers commonly rely on ad‑hoc local servers, browser extensions, or general‑purpose proxies (e.g., mitmproxy [@mitmproxy]) to test web behavior. Automation frameworks such as Selenium [@selenium] and Playwright [@playwright] can orchestrate browser flows, but they do not specifically target reproducible referrer emulation with locally trusted HTTPS and precise `Referrer-Policy` control out‑of‑the‑box. Reflex fills this narrow but frequently encountered gap with a single‑purpose, scriptable CLI tailored to referrer‑dependent analytics and experimentation.
 
 # Availability
 
