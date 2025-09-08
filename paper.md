@@ -62,7 +62,7 @@ Developers commonly rely on ad‑hoc local servers, browser extensions, or gener
 
 # Availability
 
-Reflex is implemented in Go and distributed as prebuilt binaries for Linux, macOS, and Windows. Source code and issue tracking are available at: https://github.com/samfrm/reflex. An archival release is available on Zenodo (DOI: https://doi.org/10.5281/zenodo.17079395).
+Reflex is implemented in Go and distributed as prebuilt binaries for Linux, macOS, and Windows. Source code and issue tracking are available at: https://github.com/samfrm/reflex. An archival release is available on Zenodo (DOI: https://doi.org/10.5281/zenodo.17081049). This paper refers to version v0.1.3 of the software.
 
 # Acknowledgements
 

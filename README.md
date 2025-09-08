@@ -2,7 +2,7 @@
 
 [![Release](https://img.shields.io/github/v/release/samfrm/reflex?sort=semver)](https://github.com/samfrm/reflex/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/samfrm/reflex/total.svg)](https://github.com/samfrm/reflex/releases)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17079395.svg)](https://doi.org/10.5281/zenodo.17079395)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17081049.svg)](https://doi.org/10.5281/zenodo.17081049)
 
 <p align="center">
   <picture>
@@ -149,7 +149,7 @@ Code map:
 
 If you use Reflex in your work, please cite the archived release:
 
-- Sam (Abbas) Farahmand Pashaki. Reflex — Local HTTPS referrer emulation for reproducible web analytics and experimentation. Zenodo. https://doi.org/10.5281/zenodo.17079395
+- Sam (Abbas) Farahmand Pashaki. Reflex — Local HTTPS referrer emulation for reproducible web analytics and experimentation. Zenodo. https://doi.org/10.5281/zenodo.17081049
 
 See also the citation metadata in `CITATION.cff`.
 
