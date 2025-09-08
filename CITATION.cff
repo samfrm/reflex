@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as:"
+title: Reflex
+abstract: "Reflex emulates real HTTPS referrers locally by serving a trusted redirect so browsers set a realistic Referer/document.referrer for analytics and experimentation."
+type: software
+repository-code: https://github.com/samfrm/reflex
+license: MIT
+authors:
+  - given-names: "Sam (Abbas)"
+    family-names: "Farahmand Pashaki"
+    orcid: "https://orcid.org/0009-0006-7721-2644"
+preferred-citation:
+  type: software
+  title: Reflex
+  authors:
+    - given-names: "Sam (Abbas)"
+      family-names: "Farahmand Pashaki"
+      orcid: "https://orcid.org/0009-0006-7721-2644"
+  url: https://github.com/samfrm/reflex
+  notes: "version/DOI will be available."
