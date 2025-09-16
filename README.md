@@ -114,6 +114,31 @@ More:
 
 - ⏱️ `--delay` (meta/js, ms), 🔌 `--port` (default 443, falls back to 8443), 🗂️ `--keep-certs`, 🧪 `--no-hosts`, 🧹 `--force-unlock`
 
+### 🔬 Research examples
+
+- Validate experiment gating locally (referrer → experiment route):
+
+```bash
+sudo reflex run \
+  --referrer https://news.google.com \
+  --target   https://localhost:3000/experiment
+```
+
+- Compare redirect methods and observe `document.referrer` differences:
+
+```bash
+sudo reflex run --referrer https://news.google.com --target https://localhost:3000 --method meta
+sudo reflex run --referrer https://news.google.com --target https://localhost:3000 --method js
+sudo reflex run --referrer https://news.google.com --target https://localhost:3000 --method 302
+```
+
+- Evaluate `Referrer-Policy` effects (origin vs full URL):
+
+```bash
+sudo reflex run --referrer https://news.google.com --target https://localhost:3000 --referrer-policy origin-when-cross-origin
+sudo reflex run --referrer https://news.google.com --target https://localhost:3000 --referrer-policy unsafe-url
+```
+
 ### 🩹 Troubleshooting (fast answers)
 
 - 🥚 Empty `document.referrer`?
